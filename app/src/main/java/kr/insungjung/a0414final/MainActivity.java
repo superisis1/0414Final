@@ -21,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
         String valBmiLevel;
 
         valBmiInfo = getIntent().getStringExtra("Bmi지수");
-
         mBmiInfo.setText(valBmiInfo);
+
+        valBmiLevel = getIntent().getStringExtra("Bmi레벨");
+        mBmiLevel.setText(valBmiLevel);
+
     }
 }

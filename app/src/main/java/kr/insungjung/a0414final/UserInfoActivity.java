@@ -37,11 +37,22 @@ public class UserInfoActivity extends AppCompatActivity {
                 valHeight = Double.parseDouble(sHeight);
                 valWeight = Double.parseDouble(sWeight);
 
-                valBmi = valWeight / ((valHeight/100) * (valHeight/100));
-                String valBmiInfo = String.format("%.2f",valBmi);
+                valBmi = valWeight / ((valHeight / 100) * (valHeight / 100));
+                String valBmiInfo = String.format("%.2f", valBmi);
+
+                if (valBmi > 0 && valBmi <= 18.5) {
+                    levelBmi = "저체중";
+                } else if (valBmi < 25) {
+                    levelBmi = "정상";
+                } else if (valBmi < 30) {
+                    levelBmi = "과체중";
+                } else {
+                    levelBmi = "비만";
+                }
 
                 Intent intent = new Intent(UserInfoActivity.this, MainActivity.class);
-                intent.putExtra("Bmi지수",valBmiInfo);
+                intent.putExtra("Bmi지수", valBmiInfo);
+                intent.putExtra("Bmi레벨", levelBmi);
                 startActivity(intent);
                 finish();
 

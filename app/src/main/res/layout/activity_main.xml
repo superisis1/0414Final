@@ -34,9 +34,9 @@
             android:paddingVertical="8dp">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:text="BMI 지수"
+                android:text="BMI 지수 :"
                 android:textSize="24sp" />
 
             <TextView
@@ -55,9 +55,9 @@
             android:paddingVertical="8dp">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:text="BMI 레벨"
+                android:text="체중 상태 :"
                 android:textSize="24sp" />
 
             <TextView
