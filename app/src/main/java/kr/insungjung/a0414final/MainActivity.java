@@ -17,13 +17,10 @@ public class MainActivity extends AppCompatActivity {
         mBmiInfo = findViewById(R.id.userBmiInfo);
         mBmiLevel = findViewById(R.id.userBmiLevel);
 
-        String valBmiInfo;
-        String valBmiLevel;
-
-        valBmiInfo = getIntent().getStringExtra("Bmi지수");
+        String valBmiInfo = getIntent().getStringExtra("Bmi지수");
         mBmiInfo.setText(valBmiInfo);
 
-        valBmiLevel = getIntent().getStringExtra("Bmi레벨");
+        String valBmiLevel = getIntent().getStringExtra("Bmi레벨");
         mBmiLevel.setText(valBmiLevel);
 
     }
