@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#AFF7EF"
+    android:background="#F0F0F0"
     android:gravity="center_vertical"
     android:orientation="vertical"
     tools:context=".UserInfoActivity">
+
+    <TextView
+        android:id="@+id/titleBmi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="키와 체중을 입력하세요"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,33 +27,75 @@
         android:orientation="vertical"
         android:paddingHorizontal="20dp">
 
-        <EditText
-            android:id="@+id/userHeight"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:background="#FFFFFF"
-            android:hint="키"
-            android:inputType="number"
-            android:padding="10dp" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
 
-        <EditText
-            android:id="@+id/userWeight"
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="키"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/inputHeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:inputType="numberDecimal"/>
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="cm"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#FFFFFF"
-            android:hint="몸무게"
-            android:inputType="number"
-            android:padding="10dp" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="몸무게"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/inputWeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:inputType="numberDecimal"/>
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="kg"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <Button
         android:id="@+id/inputBtn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:text="입력하기" />
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="16dp"
+        android:background="#888888"
+        android:text="입력"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
 </LinearLayout>

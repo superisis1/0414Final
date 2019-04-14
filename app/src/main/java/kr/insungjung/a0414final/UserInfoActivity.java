@@ -9,27 +9,41 @@ import android.widget.EditText;
 
 public class UserInfoActivity extends AppCompatActivity {
 
-    EditText userHeight;
-    EditText userWeight;
-    Button inputBtn;
+    EditText mHeight;
+    EditText mWeight;
+    Button mBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
 
-        userHeight = findViewById(R.id.userHeight);
-        userWeight = findViewById(R.id.userWeight);
-        userBmi = userWeight / ();
+        mHeight = findViewById(R.id.inputHeight);
+        mWeight = findViewById(R.id.inputWeight);
+        mBtn = findViewById(R.id.inputBtn);
 
-        inputBtn.setOnClickListener(new View.OnClickListener() {
+        mBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                double valHeight;
+                double valWeight;
+                double valBmi;
+                String levelBmi;
+
+                String sHeight = mHeight.getText().toString();
+                String sWeight = mWeight.getText().toString();
+
+                valHeight = Double.parseDouble(sHeight);
+                valWeight = Double.parseDouble(sWeight);
+
+                valBmi = valWeight / ((valHeight/100) * (valHeight/100));
+                String valBmiInfo = String.format("%.2f",valBmi);
+
                 Intent intent = new Intent(UserInfoActivity.this, MainActivity.class);
-                /*메인 액티비티로 갈 때 "사용자아이디"라는 꼬리표로 userId에 들어있는 값을 들고 가라*/
-                intent.putExtra("사용자 지수",userBmi);
+                intent.putExtra("Bmi지수",valBmiInfo);
                 startActivity(intent);
+                finish();
 
             }
         });
