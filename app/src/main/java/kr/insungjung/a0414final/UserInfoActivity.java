@@ -11,6 +11,7 @@ public class UserInfoActivity extends AppCompatActivity {
 
     EditText mHeight;
     EditText mWeight;
+    EditText mUserName;
     Button mBtn;
 
     @Override
@@ -20,6 +21,7 @@ public class UserInfoActivity extends AppCompatActivity {
 
         mHeight = findViewById(R.id.inputHeight);
         mWeight = findViewById(R.id.inputWeight);
+        mUserName = findViewById(R.id.name_text);
         mBtn = findViewById(R.id.inputBtn);
 
         mBtn.setOnClickListener(new View.OnClickListener() {
@@ -30,6 +32,8 @@ public class UserInfoActivity extends AppCompatActivity {
                 double valWeight;
                 double valBmi;
                 String levelBmi;
+
+                String userName = mUserName.getText().toString();
 
                 String sHeight = mHeight.getText().toString();
                 String sWeight = mWeight.getText().toString();
@@ -51,6 +55,7 @@ public class UserInfoActivity extends AppCompatActivity {
                 }
 
                 Intent intent = new Intent(UserInfoActivity.this, MainActivity.class);
+                intent.putExtra("사용자이름",userName);
                 intent.putExtra("Bmi지수", valBmiInfo);
                 intent.putExtra("Bmi레벨", levelBmi);
                 startActivity(intent);
@@ -61,3 +66,7 @@ public class UserInfoActivity extends AppCompatActivity {
 
     }
 }
+
+
+
+

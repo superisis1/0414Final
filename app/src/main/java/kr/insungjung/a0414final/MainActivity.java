@@ -8,6 +8,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView mBmiInfo;
     TextView mBmiLevel;
+    TextView mTitleBmi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +17,18 @@ public class MainActivity extends AppCompatActivity {
 
         mBmiInfo = findViewById(R.id.userBmiInfo);
         mBmiLevel = findViewById(R.id.userBmiLevel);
+        mTitleBmi = findViewById(R.id.titleBmi);
 
         String valBmiInfo = getIntent().getStringExtra("Bmi지수");
         mBmiInfo.setText(valBmiInfo);
 
         String valBmiLevel = getIntent().getStringExtra("Bmi레벨");
         mBmiLevel.setText(valBmiLevel);
+
+        String titleBmi = getIntent().getStringExtra("사용자이름");
+        String titleContent = String.format("%s 님의 BMI 정보입니다.",titleBmi);
+
+        mTitleBmi.setText(titleContent);
 
     }
 }
