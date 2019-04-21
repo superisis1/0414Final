@@ -20,15 +20,25 @@ public class MainActivity extends AppCompatActivity {
         mTitleBmi = findViewById(R.id.titleBmi);
 
         String valBmiInfo = getIntent().getStringExtra("Bmi지수");
-        mBmiInfo.setText(valBmiInfo);
-
         String valBmiLevel = getIntent().getStringExtra("Bmi레벨");
-        mBmiLevel.setText(valBmiLevel);
-
         String titleBmi = getIntent().getStringExtra("사용자이름");
-        String titleContent = String.format("%s 님의 BMI 정보입니다.",titleBmi);
+        String titleContent = String.format("%s 님의 BMI 정보입니다.", titleBmi);
 
+        mBmiInfo.setText(valBmiInfo);
+        mBmiLevel.setText(valBmiLevel);
         mTitleBmi.setText(titleContent);
-
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

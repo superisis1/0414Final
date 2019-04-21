@@ -34,7 +34,6 @@ public class UserInfoActivity extends AppCompatActivity {
                 String levelBmi;
 
                 String userName = mUserName.getText().toString();
-
                 String sHeight = mHeight.getText().toString();
                 String sWeight = mWeight.getText().toString();
 
@@ -42,6 +41,7 @@ public class UserInfoActivity extends AppCompatActivity {
                 valWeight = Double.parseDouble(sWeight);
 
                 valBmi = valWeight / ((valHeight / 100) * (valHeight / 100));
+
                 String valBmiInfo = String.format("%.2f", valBmi);
 
                 if (valBmi > 0 && valBmi <= 18.5) {
@@ -55,7 +55,7 @@ public class UserInfoActivity extends AppCompatActivity {
                 }
 
                 Intent intent = new Intent(UserInfoActivity.this, MainActivity.class);
-                intent.putExtra("사용자이름",userName);
+                intent.putExtra("사용자이름", userName);
                 intent.putExtra("Bmi지수", valBmiInfo);
                 intent.putExtra("Bmi레벨", levelBmi);
                 startActivity(intent);
@@ -66,6 +66,19 @@ public class UserInfoActivity extends AppCompatActivity {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
